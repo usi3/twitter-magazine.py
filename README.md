@@ -11,28 +11,34 @@ Twitterで管理しているリストをメールマガジンのような形式�
 
 ## 導入手順
 以下の導入手順はDebian系のLinuxディストリビューションを前提としています。
-環境に応じて適宜変えてください。
+環境に応じて適宜読み変えてください。
 
-1. Python 3系列でのみ動作を確認しています
+1. Python 3系列でのみ動作を確認しています。
     - `python --version`
-2. Python の Twitter クライアントである tweepy が必要です
+    
+2. Python の Twitter クライアントである tweepy が必要です。
     - `pip install tweepy`
-3. Gmail でメールを配信する場合はアプリパスワードを取得する必要があります
+    
+3. Gmail でメールを配信する場合はアプリパスワードを取得する必要があります。
     - https://support.google.com/mail/answer/185833?hl=ja
-4. GNU mail と sSMTP を用いてメールを配信します
+    
+4. GNU mail と sSMTP を用いてメールを配信します。
     - `apt install ssmtp mailutils`
-5. SMTPでメールを送信できるよう `/etc/ssmtp/ssmtp.conf` の設定が必要です
+    
+5. SMTPでメールを送信できるよう `/etc/ssmtp/ssmtp.conf` の設定が必要です。
     - mailコマンドの動作確認
         - `echo "Hello." | mail -s "Test Title" your-account@gmail.com`
-6. Twitter の開発者ツールにおいて新規アプリを作成しキーとトークンを取得します
+        
+6. Twitter の開発者ツールにおいて新規アプリを作成しキーとトークンを取得します。
     - [Twitter Developer Platform](https://developer.twitter.com/)
 
-7. `twitter-magazine.py` を開いて冒頭の変数と関数を編集します
+7. `twitter-magazine.py` を開いて冒頭の変数と関数を編集します。
+    - 編集後は個人情報を含むため取り扱いにご注意ください。
 
-8. 以下を実行すると自分宛てにメールが届くはずです
+8. 以下を実行すると自分宛てにメールが届くはずです。
     - `python twitter-magazine.py`
    
-9. 動作を確認できたら `cron` 等に登録します
+9. 動作を確認できたら `cron` 等に登録して定期実行します。
 
 ### 設定例
 #### /etc/ssmtp/ssmtp.conf (Gmailの場合)
