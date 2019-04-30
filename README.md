@@ -1,0 +1,2 @@
+# twitter-magazine.py
+つぶやきをメールマガジンのような形式で自分のみに配信するPythonスクリプト
